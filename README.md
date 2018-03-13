@@ -1,4 +1,3 @@
-<p align="center"><img src="/img/logo.jpg" height="120" /></p>
 <h1>TaskTrack</h1>
 <p><em>This document provides general information on the TaskTracker application</em></p>
 
