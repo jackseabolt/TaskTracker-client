@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0px;
+  font-family: sans-serif;
+  background-color: rgb(56, 56, 56); 
+}
+
+.g-column {
+  width: calc(30% - 60px); 
+  padding: 20px 30px; 
+  margin: 0px 1.65%; 
+  display: inline-block; 
+  background-color: rgb(211, 211, 223); 
+  transition: 300ms ease-in-out;
+  height: 100%; 
+}
+
+.g-item {
+  width: calc(100% - 60px); 
+  padding: 30px; 
+  background-color: rgb(178, 177, 194); 
+  color: white;
+  margin-top: 10px; 
+  margin-bottom: 10px; 
+  border-radius: 5px;  
+}
+
+.g-item-title {
+  width: calc(100% - 60px); 
+  padding: 30px; 
+  background-color: rgb(146, 145, 163); 
+  color: white;
+  margin-top: 10px; 
+  margin-bottom: 10px; 
+  border-radius: 5px;  
+}
+
+.g-title {
+  margin: 0px; 
+}
+
+.g-graphic-button {
+  width: 30px; 
+  height: 30px; 
+  background: rgb(0, 0, 0);
+  opacity: 0.2;  
+  border-radius: 50%; 
+  float: right; 
+  position: relative; 
+  top: -7px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  transition: 0.3s; 
+  cursor: pointer;
+  margin-left: 10px;  
+}
+
+.g-graphic-button:hover {
+  opacity: 0.3; 
+}
+
+@media screen and (max-width: 1200px) {
+  .g-column {
+    width: calc(100% - 60px); 
+    padding: 20px 30px; 
+    margin: 0px 0px 20px; 
+    display: inline-block; 
+    background-color: rgb(211, 211, 223); 
+  }
+}

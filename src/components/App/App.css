@@ -1,0 +1,12 @@
+.App { 
+    display: flex; 
+    align-items: top; 
+    padding: 120px 50px; 
+}
+
+
+@media screen and (max-width: 1200px) {
+    .App { 
+        display:block; 
+    }
+  }
