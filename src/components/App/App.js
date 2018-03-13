@@ -10,12 +10,12 @@ class App extends Component {
     super(); 
     this.state = {
       ToDos: [
-        'Wash car', 
-        'Do dishes', 
-        'Clean garage'
+        'Example 1', 
+        'Example 2', 
+        'Example 3'
       ], 
       Completed: [
-        'Homework'
+        'Example 4'
       ]
     }
   }
