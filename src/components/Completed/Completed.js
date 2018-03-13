@@ -5,7 +5,7 @@ export default class Completed extends React.Component {
     render() {
 
         const items = this.props.items.map((item, key) => (
-            <CompletedItem item={item} onDelete={value => this.props.onDelete(value)}/>
+            <CompletedItem key={key} item={item} onDelete={value => this.props.onDelete(value)}/>
         )); 
 
         return (
