@@ -1,10 +1,10 @@
-<h1>TaskTrack</h1>
+<h1>TaskTracker</h1>
 <p><em>This document provides general information on the TaskTracker application</em></p>
 
 
-Why TaskTrack
+Why TaskTracker
 -------------
-Everyone needs a way to stay organized. Try TaskTrack! Create a list of items you want to complete. Check them off as each task is completed. 
+Everyone needs a way to stay organized. Try TaskTracker! Create a list of items you want to complete. Check them off as each task is completed. 
 
 For local use
 --------
