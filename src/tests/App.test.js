@@ -8,13 +8,13 @@ describe('App', () => {
   it('renders without crashing', () => {
     shallow(<App />); 
   });
-  it('contains <ToDos />', () => {
-    const app = shallow(<App />); 
-    expect(app.contains(<ToDos/>)).toEqual(true); 
-  }); 
-  it('contains <Completed />', () => {
-    const app = shallow(<App />);
-    expect(app.contains(<Completed />)).toEqual(true); 
-  }); 
+  // it('contains <ToDos />', () => {
+  //   const app = shallow(<App />); 
+  //   expect(app.contains(<ToDos/>)).toEqual(true); 
+  // }); 
+  // it('contains <Completed />', () => {
+  //   const app = shallow(<App />);
+  //   expect(app.contains(<Completed />)).toEqual(true); 
+  // }); 
 }); 
 
