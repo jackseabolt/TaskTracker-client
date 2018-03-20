@@ -14,7 +14,7 @@ For local use
 git clone https://github.com/jackseabolt/TaskTracker.git
 
 # Change directory
-cd TaskTrack
+cd TaskTracker
 
 # Install NPM dependencies
 npm install
