@@ -1,7 +1,8 @@
 import React from 'react'; 
-import CompletedItem from '../CompletedItem/CompletedItem'; 
+import CompletedItem from '../CompletedItem/CompletedItem';
+import { connect } from 'react-redux';  
 
-export default class Completed extends React.Component {
+export class Completed extends React.Component {
     render() {
 
         const items = this.props.items.map((item, key) => (
@@ -18,3 +19,8 @@ export default class Completed extends React.Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+}); 
+
+export default connect(mapStateToProps)(Completed); 
