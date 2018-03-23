@@ -1,0 +1,98 @@
+.login-main {
+    width: 50%; 
+    max-width: 400px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    background-color: rgb(211, 211, 211); 
+    padding: 50px; 
+    z-index: 21;
+    color: rgb(68, 68, 68);
+    transition: 1s;
+    box-shadow: 0px 0px 40px rgb(29, 29, 29); 
+    border-radius: 3px;
+    transition: 0.3s;   
+}
+
+.login-p {
+    line-height: 22px; 
+}
+
+/* .login-backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%; 
+    width: 100%; 
+    margin: 0px; 
+    z-index: 20; 
+    top: 0px; 
+    bottom: 0px; 
+    left: 0px; 
+    right: 0px; 
+    position: fixed;
+    display: flex; 
+    align-items: center; 
+} */
+
+.login-question {
+    margin-bottom: 10px; 
+}
+
+.login-question-label {
+    position: relative; 
+    top: 2px; 
+}
+
+.login-title {
+    margin-top: 0px;
+    margin-bottom: 30px;  
+}
+
+.login-button {
+    margin-top: 30px; 
+    color: white; 
+    background-color: rgb(49, 49, 58); 
+    padding: 20px 15px; 
+    width: 100%; 
+    font-size: 17px;
+    border-radius: 5px;  
+    transition: 0.6s; 
+    cursor: pointer; 
+}
+
+.login-button:hover {
+    background-color: rgb(31, 31, 36); 
+} 
+
+.login-form {
+    margin-top: 30px; 
+}
+
+.login-close {
+    float: right; 
+    opacity: 0.6; 
+    font-size: 20px; 
+    position: relative; 
+    top: -18px; 
+    right: -10px; 
+    transition: 0.3s; 
+    cursor: pointer;
+}
+
+.login-close:hover {
+    opacity: 0.8; 
+}
+
+.login-wrong-response {
+    text-align: center; 
+    color: rgb(148, 77, 77); 
+}
+
+.login-right-response {
+    text-align: center; 
+    color: rgb(90, 143, 108); 
+}
+
+.login-score {
+    text-align: center; 
+    margin-top: 20px; 
+}
+

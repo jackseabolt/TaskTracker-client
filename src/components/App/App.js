@@ -6,12 +6,25 @@ import Login from '../Login/Login';
 import { Route } from 'react-router-dom';   
 
 class App extends Component {
+
+  constructor() {
+    super(); 
+    this.state={
+      loggingIn: false
+    }
+  }
+
   render() {
+    let login; 
+    if (this.state.loggingIn) {
+      login = <Login />
+    }
+
     return (
       <div>
         <Header />
         <Route exact path='/' component={Home} />
-        <Route exact path='/login' component={Login} />
+        { login }
         <Route exact path='/demo' component={Demo} />
       </div>
     );
