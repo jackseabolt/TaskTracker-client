@@ -11,10 +11,10 @@ For local use
 
 ```bash
 # Clone repository
-git clone https://github.com/jackseabolt/TaskTracker.git
+git clone https://github.com/jackseabolt/TaskTracker-client.git
 
 # Change directory
-cd TaskTracker
+cd TaskTracker-client
 
 # Install NPM dependencies
 npm install
