@@ -7,8 +7,7 @@ export default class Home extends React.Component {
             <div>
                 <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
                 <h1>Home</h1>
-                <Link to='/demo'>Demo</Link>
-                <Link to='/login'>Login</Link>
+                <Link to='/demo'><button className="g-button">Demo</button></Link>
             </div>
         )
     }

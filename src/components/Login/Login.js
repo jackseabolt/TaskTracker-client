@@ -5,9 +5,19 @@ import { toggleLogin } from '../../actions/mainActions';
 import { Transition } from 'react-transition-group';
 
 export class Login extends React.Component {
-    
+    constructor(props) {
+        super(props) 
+        this.state={
+            signUp: false
+        }
+    }
+
     handleClose() {
         this.props.dispatch(toggleLogin()); 
+    }
+
+    handleSignUpToggle() {
+        this.setState({ signUp: !this.state.signUp})
     }
     
     render() {
@@ -37,6 +47,29 @@ export class Login extends React.Component {
             entered: { opacity: 1 }
         }
 
+        // toggle signup options
+
+        let content; 
+        if(this.state.signUp) {
+            content = <form>
+                <h2 className="login-title">Sign Up</h2>
+                <input className="login-input" placeholder="username" />
+                <input className="login-input" placeholder="password" />
+                <button className="login-button">Register</button>
+                <p className="login-subtext">Already a member? 
+                Log in <span onClick={() => this.handleSignUpToggle()}className="login-link">here</span></p>
+            </form>
+        } else {
+            content = <form>
+                <h2 className="login-title">Log in</h2>
+                <input className="login-input" placeholder="username" />
+                <input className="login-input" placeholder="password" />
+                <button className="login-button">Log In</button>
+                <p className="login-subtext">Not a member? 
+                Sign up <span onClick={() => this.handleSignUpToggle()}className="login-link">here</span></p>
+            </form>
+        }
+
         return (
             <Transition in={true} timeout={duration} appear={true}>
                 {(state) => (
@@ -48,10 +81,8 @@ export class Login extends React.Component {
                             <div onClick={() => this.handleClose()} className="login-close">
                                 <i className="fas fa-times login-close-icon"></i>
                             </div>
-                            <h2 className="login-title">Login</h2>
-                            <p className="lgin-p">So you think you know about {this.props.title}? This quiz contains {this.props.quizLength} questions that will test your knowledge.<br /><br />
-                                Good luck!</p>
-                            <button className="login-button">Start</button>
+                           { content }
+                           
                         </div>
                     </div>
                 )}

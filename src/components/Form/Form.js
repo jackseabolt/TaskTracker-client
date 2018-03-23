@@ -42,7 +42,7 @@ export default class Form extends React.Component {
                             ref={input => this.input = input} 
                         />
                         { validation }
-                        <button className="form-button">Add</button>
+                        <button className="g-button">Add</button>
                     </form>
                 </div>
             </ section> 

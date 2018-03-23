@@ -3,6 +3,7 @@ import Login from '../Login/Login';
 import './Header.css'; 
 import { connect } from 'react-redux'; 
 import { toggleLogin } from '../../actions/mainActions'; 
+import { Link } from 'react-router-dom'; 
 
 export class Header extends React.Component {
 
@@ -19,8 +20,8 @@ export class Header extends React.Component {
 
         return (
             <header>
-                <h3 className="header-logo">TaskTracker</h3>
-                <h4 className="header-logo" onClick={() => this.handleLogin()}>Login</h4>
+                <Link to='/'><h3 className="header-logo">TaskTracker</h3></Link>
+                <button className="g-button header-button" onClick={() => this.handleLogin()}>Login</button>
                 { login }
             </header>
         )
