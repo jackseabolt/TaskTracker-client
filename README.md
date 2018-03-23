@@ -6,7 +6,7 @@ Why TaskTracker
 -------------
 Everyone needs a way to stay organized. Try TaskTracker! Create a list of items you want to complete. Check them off as each task is completed. 
 
-Why TaskTracker
+How It Works
 -------------
 The TaskTracker client-side application was built using React and Redux. The backend was built with Node, Express, Sequelize and PostreSQL. 
 
