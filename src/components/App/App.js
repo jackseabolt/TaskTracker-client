@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import Home from '../Home/Home'; 
 import Login from '../Login/Login';  
 import Navigation from '../Navigation/Navigation'; 
+import './App.css'; 
 import { refreshAuthToken } from '../../actions/mainActions';
 import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
@@ -43,9 +44,11 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Route exact path='/' component={Home} />
-        <Route exact path='/demo' component={Demo} />
-        <Route exact path='/navigation' component={Navigation} />      
+        <div className="app-main">
+            <Route exact path='/' component={Home} />
+            <Route exact path='/demo' component={Demo} />
+            <Route exact path='/navigation' component={Navigation} />   
+        </div>   
       </div>
     );
   }

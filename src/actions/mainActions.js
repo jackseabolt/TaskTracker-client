@@ -5,6 +5,11 @@ import jwtDecode from 'jwt-decode';
 import { saveAuthToken, clearAuthToken } from '../local-storage'; 
 
 
+export const LOG_OUT = 'LOG_OUT'; 
+export const logOut = () => ({
+    type: LOG_OUT
+}); 
+
 export const TOGGLE_LOGIN = 'TOGGLE_LOGIN'; 
 export const toggleLogin = () => ({
     type: TOGGLE_LOGIN
