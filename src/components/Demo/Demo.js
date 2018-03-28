@@ -57,7 +57,7 @@ export default class Demo extends React.Component {
 
     render() {
         return (
-            <div class="Demo">
+            <div className="Demo">
                 <Form onAdd={value => this.handleAdd(value)} />
                 <ToDos
                     items={this.state.ToDos}

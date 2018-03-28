@@ -1,7 +1,7 @@
 import React from 'react';
 import './Login.css'
 import { connect } from 'react-redux'; 
-import { toggleLogin } from '../../actions/mainActions'; 
+import { toggleLogin, signUp, login } from '../../actions/mainActions'; 
 import { Transition } from 'react-transition-group';
 
 export class Login extends React.Component {
@@ -18,6 +18,19 @@ export class Login extends React.Component {
 
     handleSignUpToggle() {
         this.setState({ signUp: !this.state.signUp})
+    }
+
+    handleSignUp(e) {
+        e.preventDefault(); 
+        return this.props.dispatch(signUp(this.signupUsername.value, this.signupPassword.value))
+            .then(() => this.props.dispatch(login(this.signupUsername.value, this.signupPassword.value)))
+            .then(() => this.props.dispatch(toggleLogin()));  
+    }
+
+    handleLogin(e) {
+        e.preventDefault(); 
+        return this.props.dispatch(login(this.loginUsername.value, this.loginPassword.value)) 
+        .then(() => this.props.dispatch(toggleLogin())); 
     }
     
     render() {
@@ -51,19 +64,35 @@ export class Login extends React.Component {
 
         let content; 
         if(this.state.signUp) {
-            content = <form>
+            content = <form onSubmit={e => this.handleSignUp(e)}>
                 <h2 className="login-title">Sign Up</h2>
-                <input className="login-input" placeholder="username" />
-                <input className="login-input" placeholder="password" />
+                <input 
+                    className="login-input" 
+                    placeholder="username" 
+                    ref={input => this.signupUsername = input}
+                />
+                <input 
+                    className="login-input" 
+                    placeholder="password"
+                    ref={input => this.signupPassword = input} 
+                />
                 <button className="login-button">Register</button>
                 <p className="login-subtext">Already a member? 
                 Log in <span onClick={() => this.handleSignUpToggle()}className="login-link">here</span></p>
             </form>
         } else {
-            content = <form>
+            content = <form onSubmit={e => this.handleLogin(e)}>
                 <h2 className="login-title">Log in</h2>
-                <input className="login-input" placeholder="username" />
-                <input className="login-input" placeholder="password" />
+                <input 
+                    className="login-input" 
+                    placeholder="username" 
+                    ref={input => this.loginUsername = input}
+                />
+                <input 
+                    className="login-input" 
+                    placeholder="password" 
+                    ref={input => this.loginPassword = input}
+                />
                 <button className="login-button">Log In</button>
                 <p className="login-subtext">Not a member? 
                 Sign up <span onClick={() => this.handleSignUpToggle()}className="login-link">here</span></p>

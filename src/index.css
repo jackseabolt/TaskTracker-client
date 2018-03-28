@@ -14,6 +14,14 @@ button:focus {
   outline:0;
 }
 
+.g-input {
+  padding: 9px 15px; 
+  border: 1px solid grey; 
+  border-radius: 5px; 
+  width: calc(100% - 30px);
+  font-size: 14px;  
+}
+
 .g-column {
   width: calc(30% - 60px); 
   padding: 20px 30px; 
