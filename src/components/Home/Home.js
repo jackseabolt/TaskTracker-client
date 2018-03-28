@@ -1,8 +1,12 @@
 import React from 'react'; 
-import { Link } from 'react-router-dom'; 
+import { connect } from 'react-redux'; 
+import { Link, Redirect } from 'react-router-dom'; 
 
-export default class Home extends React.Component {
+export class Home extends React.Component {
     render() {
+        if(this.props.loggedIn) {
+            return <Redirect to='/navigation' />
+        }
         return (
             <div>
                 <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
@@ -12,3 +16,9 @@ export default class Home extends React.Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    loggedIn: state.currentUser !== null
+}); 
+
+export default connect(mapStateToProps)(Home); 
