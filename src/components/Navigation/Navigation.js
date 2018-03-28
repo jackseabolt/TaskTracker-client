@@ -1,6 +1,7 @@
 import React from 'react';
 import NewBoardForm from '../NewBoardForm/NewBoardForm'; 
 import BoardSelector from '../BoardSelector/BoardSelector'; 
+import './Navigation.css'; 
 import { connect } from 'react-redux'; 
 import { Redirect } from 'react-router-dom'; 
 import { getUserBoards } from '../../actions/mainActions';  
@@ -11,7 +12,6 @@ export class Navigation extends React.Component {
     }
     
     render() {
-
         const boards = this.props.boards.map((board, key) => (
             <BoardSelector key={key} name={board.name} id={board.id}/>   
         )); 
@@ -21,12 +21,13 @@ export class Navigation extends React.Component {
         }
 
         return (
-            <div>
-                <br /><br /><br /><br /><br /><br /><br /><br />
+            <div className="navigation">
                 <h1>Navigation</h1>
                 <h4>Welcome {this.props.currentUser}</h4>
                 <NewBoardForm />
-                { boards }
+                <section className="navigation-panel">
+                    { boards }
+                </section>
             </div>
         )
     }

@@ -3,7 +3,8 @@ import {
     SET_AUTH_TOKEN, 
     AUTH_SUCCESS, 
     UPDATE_CURRENT_USER, 
-    ADD_TO_BOARDS 
+    ADD_TO_BOARDS, 
+    LOG_OUT
 } from '../actions/mainActions'; 
 
 const initialState = {
@@ -17,6 +18,12 @@ export const mainReducer = (state=initialState, action) => {
     if(action.type === TOGGLE_LOGIN) {
         return Object.assign({}, state, {
             loggingIn: !state.loggingIn
+        }); 
+    }
+    else if(action.type === LOG_OUT) {
+        return Object.assign({}, state, {
+            authToken: null,
+            currentUser: null
         }); 
     }
     else if (action.type === SET_AUTH_TOKEN) {

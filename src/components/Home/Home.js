@@ -9,7 +9,6 @@ export class Home extends React.Component {
         }
         return (
             <div>
-                <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
                 <h1>Home</h1>
                 <Link to='/demo'><button className="g-button">Demo</button></Link>
             </div>
