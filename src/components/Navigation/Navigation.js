@@ -22,10 +22,11 @@ export class Navigation extends React.Component {
 
         return (
             <div className="navigation">
-                <h1>Navigation</h1>
-                <h4>Welcome {this.props.currentUser}</h4>
-                <NewBoardForm />
-                <section className="navigation-panel">
+                <section className="navigation-panel-left">
+                    <h2>New Board</h2>
+                    <NewBoardForm />
+                </section>
+                <section className="navigation-panel-right">
                     { boards }
                 </section>
             </div>

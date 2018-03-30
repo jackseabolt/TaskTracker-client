@@ -1,7 +1,6 @@
 .Demo { 
     display: flex; 
-    align-items: top; 
-    padding: 120px 50px; 
+    align-items: top;  
 }
 
 

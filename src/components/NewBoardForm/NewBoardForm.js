@@ -1,6 +1,7 @@
 import React from 'react'; 
 import { connect } from 'react-redux';
 import { createBoard } from '../../actions/mainActions'; 
+import './NewBoardForm.css'; 
 
 export class NewBoardForm extends React.Component {
     
@@ -8,14 +9,13 @@ export class NewBoardForm extends React.Component {
         event.preventDefault(); 
         const name = this.input.value
         const user_id = this.props.currentUser.id
-        console.log(name, user_id)
         this.props.dispatch(createBoard(name, user_id))
         this.input.value = ""
     }
     
     render() {
         return (
-            <form onSubmit={e => this.handleSubmit(e)}>
+            <form onSubmit={e => this.handleSubmit(e)} className="new-board-form">
                 <input 
                     className="g-input" 
                     placeholder="Title your new board"

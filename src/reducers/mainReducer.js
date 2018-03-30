@@ -23,7 +23,8 @@ export const mainReducer = (state=initialState, action) => {
     else if(action.type === LOG_OUT) {
         return Object.assign({}, state, {
             authToken: null,
-            currentUser: null
+            currentUser: null,
+            boards: []
         }); 
     }
     else if (action.type === SET_AUTH_TOKEN) {
@@ -37,8 +38,9 @@ export const mainReducer = (state=initialState, action) => {
         });
     } 
     else if (action.type === ADD_TO_BOARDS) {
+        console.log(action.boards)
         return Object.assign({}, state, {
-            boards: state.boards.concat([...action.boards])
+            boards: action.boards
         }); 
     }
     return state; 
