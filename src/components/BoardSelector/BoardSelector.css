@@ -6,7 +6,8 @@
     padding: 20px 40px;
     font-size: 16px; 
     line-height: 16px;
-    transition: 1s;   
+    transition: 1s;  
+    overflow: auto; 
 }
 .board-selector:hover {
     background-color: rgb(79, 79, 94); 
@@ -14,6 +15,21 @@
 }
 
 .board-selector-p {
-    padding: 0px; 
-    margin: 0px; 
+    padding-top: 10px; 
+    margin: 0px;
+    display: inline-block;  
 }
+
+.board-selector-delete-button {
+    padding: 9px 25px; 
+    border: 1px solid rgb(78, 64, 64);
+    background-color: rgb(163, 94, 94); 
+    border-radius: 5px; 
+    color: white; 
+    transition: 0.3s;
+    font-size: 14px; 
+    cursor: pointer; 
+    float: right;
+    margin: 0px;      
+}
+
