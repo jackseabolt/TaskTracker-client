@@ -117,7 +117,6 @@ export const refreshAuthToken = () => (dispatch, getState) => {
 
 export const createBoard = (name, user_id) => (dispatch, getState) => {
     const authToken = getState().authToken; 
-    console.log(`IN ACTION: ${name}${user_id}`)
     return fetch('http://localhost:8080/board/', {
         method: 'POST', 
         headers: {
@@ -129,6 +128,21 @@ export const createBoard = (name, user_id) => (dispatch, getState) => {
     .then(res => normalizeResponseErrors(res))
     .then(res => {return res.json()})
     .then(board => dispatch(getUserBoards(user_id)))
+    .catch(err => {
+        console.error(err); 
+    });
+}
+
+export const deleteBoard = (user_id, board_id) => (dispatch, getState) => {
+    const authToken = getState().authToken; 
+    return fetch(`http://localhost:8080/board/${board_id}`, {
+        method: 'DELETE', 
+        headers: {
+            Authorization: `Bearer ${authToken}`, 
+            'content-type': 'application/json'
+        }
+    })
+    .then(() => dispatch(getUserBoards(user_id)))
     .catch(err => {
         console.error(err); 
     });

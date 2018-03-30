@@ -13,7 +13,7 @@ export class Navigation extends React.Component {
     
     render() {
         const boards = this.props.boards.map((board, key) => (
-            <BoardSelector key={key} name={board.name} id={board.id}/>   
+            <BoardSelector key={key} board={board} />   
         )); 
 
         if(!this.props.loggedIn) {
