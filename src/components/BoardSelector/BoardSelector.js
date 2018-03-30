@@ -1,6 +1,7 @@
 import React from 'react'; 
 import { connect } from 'react-redux'; 
 import { deleteBoard } from '../../actions/mainActions'; 
+import { Transition } from 'react-transition-group'; 
 import './BoardSelector.css'; 
 
 export class BoardSelector extends React.Component {
@@ -12,13 +13,24 @@ export class BoardSelector extends React.Component {
     }
 
     render() {
+
+        const transitionStyles = {
+            entering: { opacity: 0 }, 
+            entered: { opacity: 1 }
+        }
         return (
-            <section className="board-selector">
-                <div>
-                    <p className="board-selector-p">{this.props.board.name}</p>
-                    <button className="board-selector-delete-button" onClick={() => this.handleDelete()}>Delete</button>
-                </div>
-            </section>
+            <Transition in={true} timeout={200} appear={true}>
+            {(state) => (
+                <section className="board-selector" style={{  
+                    ...transitionStyles[state]
+                }} > 
+                        <div>
+                            <p className="board-selector-p">{this.props.board.name}</p>
+                            <button className="board-selector-delete-button" onClick={() => this.handleDelete()}>Delete</button>
+                        </div>
+                    </section>
+                )}
+            </Transition>
         )
     }
 }

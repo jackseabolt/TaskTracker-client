@@ -1,9 +1,9 @@
 .app-main {
-    padding: 140px 100px; 
+    /* padding: 140px 100px;  */
 }
 
 @media screen and (max-width: 600px) {
     .app-main { 
-        padding: 0px; 
+        /* padding: 0px;  */
     }
 }

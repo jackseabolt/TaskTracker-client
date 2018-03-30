@@ -23,7 +23,7 @@ export class Navigation extends React.Component {
         return (
             <div className="navigation">
                 <section className="navigation-panel-left">
-                    <h2>New Board</h2>
+                    <h2>Create Board</h2>
                     <NewBoardForm />
                 </section>
                 <section className="navigation-panel-right">
