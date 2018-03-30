@@ -1,6 +1,5 @@
 import React from 'react'; 
 import CompletedItem from '../CompletedItem/CompletedItem';
-import { connect } from 'react-redux';  
 
 export default class Completed extends React.Component {
     render() {

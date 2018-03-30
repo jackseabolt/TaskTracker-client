@@ -4,14 +4,16 @@ import {
     AUTH_SUCCESS, 
     UPDATE_CURRENT_USER, 
     ADD_TO_BOARDS, 
-    LOG_OUT
+    LOG_OUT, 
+    SET_CURRENT_BOARD
 } from '../actions/mainActions'; 
 
 const initialState = {
     loggingIn: false,
     authToken: null, // authToken !== null does not mean it is valid
     currentUser: null, // object includes id and username
-    boards: []
+    boards: [], 
+    currentBoardId: null
 }
 
 export const mainReducer = (state=initialState, action) => {
@@ -24,7 +26,8 @@ export const mainReducer = (state=initialState, action) => {
         return Object.assign({}, state, {
             authToken: null,
             currentUser: null,
-            boards: []
+            boards: [], 
+            currentBoardId: null
         }); 
     }
     else if (action.type === SET_AUTH_TOKEN) {
@@ -37,6 +40,12 @@ export const mainReducer = (state=initialState, action) => {
             currentUser: action.currentUser
         });
     } 
+    else if (action.type === SET_CURRENT_BOARD) {
+        console.log("REDUCER FIRED", action.board_id)
+        return Object.assign({}, state, {
+            currentBoardId: action.board_id
+        }); 
+    }
     else if (action.type === ADD_TO_BOARDS) {
         console.log(action.boards)
         return Object.assign({}, state, {

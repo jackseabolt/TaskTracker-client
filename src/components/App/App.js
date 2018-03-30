@@ -3,6 +3,7 @@ import Demo from '../Demo/Demo';
 import Header from '../Header/Header';
 import Home from '../Home/Home'; 
 import Login from '../Login/Login';  
+import Board from '../Board/Board'; 
 import Navigation from '../Navigation/Navigation'; 
 import './App.css'; 
 import { refreshAuthToken } from '../../actions/mainActions';
@@ -47,7 +48,8 @@ class App extends Component {
         <div className="app-main">
             <Route exact path='/' component={Home} />
             <Route exact path='/demo' component={Demo} />
-            <Route exact path='/navigation' component={Navigation} />   
+            <Route exact path='/navigation' component={Navigation} /> 
+            <Route exact path='/board' component={Board} />  
         </div>   
       </div>
     );

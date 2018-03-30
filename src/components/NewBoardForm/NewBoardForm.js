@@ -18,7 +18,7 @@ export class NewBoardForm extends React.Component {
             <form onSubmit={e => this.handleSubmit(e)} className="new-board-form">
                 <input 
                     className="g-input" 
-                    placeholder="Title your new board"
+                    placeholder="Title"
                     ref={input => this.input = input} 
                 />
                 <button className="g-button" type="submit">Create</button>
