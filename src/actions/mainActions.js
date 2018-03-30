@@ -117,16 +117,18 @@ export const refreshAuthToken = () => (dispatch, getState) => {
 
 export const createBoard = (name, user_id) => (dispatch, getState) => {
     const authToken = getState().authToken; 
-    return fetch('http://localhost:8080/board', {
+    console.log(`IN ACTION: ${name}${user_id}`)
+    return fetch('http://localhost:8080/board/', {
         method: 'POST', 
         headers: {
-            Authorization: `Bearer ${authToken}`
+            Authorization: `Bearer ${authToken}`, 
+            'content-type': 'application/json'
         },
         body: JSON.stringify({ name, user_id })
     })
     .then(res => normalizeResponseErrors(res))
     .then(res => {return res.json()})
-    .then(board => dispatch(addToBoards(board)))
+    .then(board => dispatch(getUserBoards(user_id)))
     .catch(err => {
         console.error(err); 
     });

@@ -1,7 +1,27 @@
-.navigation-panel {
-    padding: 50px 0px; 
+.navigation-panel-left {
+    display: inline-block;
+    margin-right: 50px;  
+    width: calc(40% - 100px);
+    margin-top: 20px; 
+    padding: 50px;
+    border-radius: 2px; 
+    background-color: rgb(32, 32, 32);   
+}
+
+.navigation-panel-left h2 {
+    margin: 0px 0px 30px 0px; 
+    padding: 0px; 
+}
+
+.navigation-panel-right {
+    display: inline-block; 
+    width: 60%;  
+    padding: 0px;
+    margin-top: 20px;   
 }
 
 .navigation {
+    display: flex; 
+    align-items: top; 
     color: white; 
 }
