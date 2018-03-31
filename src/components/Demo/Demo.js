@@ -3,9 +3,11 @@ import ToDos from '../ToDos/ToDos';
 import Form from '../Form/Form';
 import Completed from '../Completed/Completed'; 
 import Header from '../Header/Header'; 
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux'; 
 import './Demo.css'; 
 
-export default class Demo extends React.Component {
+export class Demo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -56,6 +58,9 @@ export default class Demo extends React.Component {
     }
 
     render() {
+        if(this.props.loggedIn) {
+            return <Redirect to='/navigation' />
+        }
         return (
             <div className="Demo">
                 <Form onAdd={value => this.handleAdd(value)} />
@@ -72,3 +77,9 @@ export default class Demo extends React.Component {
         );
     }
 }
+
+const mapStateToProps = state => ({
+    loggedIn: state.currentUser !== null
+});
+
+export default connect(mapStateToProps)(Demo);

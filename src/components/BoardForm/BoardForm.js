@@ -23,7 +23,7 @@ export class BoardForm extends React.Component {
         }
         this.props.dispatch(addToDo(value, board_id, user_id))
         this.input.value = ""; 
-        this.setState({ message: null })
+        this.setState({ message: null });
     }
     
     render() {
