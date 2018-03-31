@@ -1,8 +1,7 @@
 .board { 
     display: flex; 
     align-items: top;
-    padding: 140px 100px;
-    background-image: url('../../images/background.jpg');  
+    padding: 140px 100px; 
 }
 
 
