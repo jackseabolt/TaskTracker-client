@@ -8,7 +8,7 @@ import { saveAuthToken, clearAuthToken } from '../local-storage';
 export const LOG_OUT = 'LOG_OUT'; 
 export const logOut = () => ({
     type: LOG_OUT
-}); 
+});
 
 export const TOGGLE_LOGIN = 'TOGGLE_LOGIN'; 
 export const toggleLogin = () => ({
@@ -21,10 +21,26 @@ export const setAuthToken = authToken => ({
     authToken
 });
 
+export const SET_SIGN_UP_FALSE = 'SET_SIGN_UP_FALSE'; 
+export const setSignUpFalse = () => ({
+    type: SET_SIGN_UP_FALSE
+}); 
+
+export const SET_SIGN_UP_TRUE = 'SET_SIGN_UP_TRUE'; 
+export const setSignUpTrue = () => ({
+    type: SET_SIGN_UP_TRUE
+});
+
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const authSuccess = currentUser => ({
     type: AUTH_SUCCESS,
     currentUser
+});
+
+export const SET_CURRENT_BOARD = 'SET_CURRENT_BOARD'; 
+export const setCurrentBoard = board_id => ({
+    type: SET_CURRENT_BOARD, 
+    board_id
 });
 
 export const ADD_TO_BOARDS = 'ADD_TO_BOARD'; 
@@ -149,7 +165,6 @@ export const deleteBoard = (user_id, board_id) => (dispatch, getState) => {
 }
 
 export const getUserBoards = (user_id) => (dispatch, getState) => {
-    console.log(user_id)
     const authToken = getState().authToken; 
     return fetch(`http://localhost:8080/users/${user_id}`, {
         method: 'GET', 
@@ -164,4 +179,71 @@ export const getUserBoards = (user_id) => (dispatch, getState) => {
         console.log(user); 
     })
     .catch(err => {console.error(err)});
+}
+
+
+export const addToDo = (value, board_id, user_id) => (dispatch, getState) => {
+    const authToken = getState().authToken; 
+    return fetch(`http://localhost:8080/board/${board_id}`, {
+        method: 'POST', 
+        headers: {
+            Authorization: `Bearer ${authToken}`, 
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({ value })
+    })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => {return res.json()})
+    .then(board => dispatch(getUserBoards(user_id)))
+    .catch(err => {
+        console.error(err); 
+    });
+}
+
+export const deleteToDo = (value, board_id, user_id) => (dispatch, getState) => {
+    const authToken = getState().authToken; 
+    return fetch(`http://localhost:8080/board/${board_id}/todo`, {
+        method: 'DELETE', 
+        headers: {
+            Authorization: `Bearer ${authToken}`, 
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({ value })
+    })
+    .then(board => dispatch(getUserBoards(user_id)))
+    .catch(err => {
+        console.error(err); 
+    });
+}
+
+export const completeToDo = (value, board_id, user_id) => (dispatch, getState) => {
+    const authToken = getState().authToken; 
+    return fetch(`http://localhost:8080/board/${board_id}/todo`, {
+        method: 'POST', 
+        headers: {
+            Authorization: `Bearer ${authToken}`, 
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({ value })
+    })
+    .then(board => dispatch(getUserBoards(user_id)))
+    .catch(err => {
+        console.error(err); 
+    });
+}
+
+export const deleteCompleted = (value, board_id, user_id) => (dispatch, getState) => {
+    const authToken = getState().authToken; 
+    return fetch(`http://localhost:8080/board/${board_id}/completed`, {
+        method: 'DELETE', 
+        headers: {
+            Authorization: `Bearer ${authToken}`, 
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({ value })
+    })
+    .then(board => dispatch(getUserBoards(user_id)))
+    .catch(err => {
+        console.error(err); 
+    });
 }

@@ -1,0 +1,12 @@
+.board-form-input {
+    padding: 9px 15px; 
+    border: 1px solid grey; 
+    border-radius: 5px; 
+    width: calc(100% - 30px);
+    font-size: 14px;  
+}
+
+.board-form-validation {
+    margin-left: 10px; 
+    color: rgb(180, 63, 63); 
+}

@@ -1,18 +1,18 @@
-.Demo { 
+.board { 
     display: flex; 
     align-items: top;
-    padding: 140px 100px;
+    padding: 140px 100px; 
 }
 
 
 @media screen and (max-width: 1200px) {
-    .Demo { 
+    .board  { 
         display:block; 
     }
 }
 
 @media screen and (max-width: 600px) {
-    .Demo { 
+    .board  { 
         padding: 89px 0px 0px; 
     }
 }

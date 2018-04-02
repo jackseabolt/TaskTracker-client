@@ -5,7 +5,8 @@
     margin-top: 20px; 
     padding: 50px;
     border-radius: 2px; 
-    background-color: rgb(32, 32, 32);   
+    background-color: rgb(32, 32, 32); 
+    border: 1px solid rgb(19, 19, 19);   
 }
 
 .navigation-panel-left h2 {
@@ -17,11 +18,43 @@
     display: inline-block; 
     width: 60%;  
     padding: 0px;
-    margin-top: 20px;   
+    margin-top: 20px;
+    border-radius: 10px; 
+    overflow: hidden; 
+    height: 100%;    
 }
 
 .navigation {
+    padding: 140px 100px;     
     display: flex; 
     align-items: top; 
-    color: white; 
+    color: white;
+}
+
+@media screen and (max-width: 950px) {
+    .navigation { 
+        display:block; 
+    }
+    .navigation { 
+        padding: 89px 0px 0px; 
+    }
+    .navigation-panel-left { 
+        margin-top: 0px; 
+        width: calc(100% - 300px);
+        padding: 50px 150px;
+    }
+    .navigation-panel-right {
+        display: inline-block; 
+        width: 100%;  
+        padding: 0px;
+        margin-top: 0px;
+        border-radius: 0px;    
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .navigation-panel-left { 
+        width: calc(100% - 100px);
+        padding: 50px;
+    }
 }
