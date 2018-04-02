@@ -1,14 +1,14 @@
 import React from 'react';
 import './Login.css'
 import { connect } from 'react-redux'; 
-import { toggleLogin, signUp, login } from '../../actions/mainActions'; 
+import { toggleLogin, signUp, login, setSignUpFalse, setSignUpTrue } from '../../actions/mainActions'; 
 import { Transition } from 'react-transition-group';
 
 export class Login extends React.Component {
     constructor(props) {
         super(props) 
         this.state={
-            signUp: false
+            signUp: true
         }
     }
 
@@ -16,8 +16,12 @@ export class Login extends React.Component {
         this.props.dispatch(toggleLogin()); 
     }
 
-    handleSignUpToggle() {
-        this.setState({ signUp: !this.state.signUp})
+    handleSignUpTrue() {
+        this.props.dispatch(setSignUpTrue()); 
+    }
+
+    handleSignUpFalse() {
+        this.props.dispatch(setSignUpFalse()); 
     }
 
     handleSignUp(e) {
@@ -63,7 +67,7 @@ export class Login extends React.Component {
         // toggle signup options
 
         let content; 
-        if(this.state.signUp) {
+        if(this.props.signUp) {
             content = <form onSubmit={e => this.handleSignUp(e)}>
                 <h2 className="login-title">Sign Up</h2>
                 <input 
@@ -78,7 +82,7 @@ export class Login extends React.Component {
                 />
                 <button className="login-button">Register</button>
                 <p className="login-subtext">Already a member? 
-                Log in <span onClick={() => this.handleSignUpToggle()}className="login-link">here</span></p>
+                Log in <span onClick={() => this.handleSignUpFalse()}className="login-link">here</span></p>
             </form>
         } else {
             content = <form onSubmit={e => this.handleLogin(e)}>
@@ -95,7 +99,7 @@ export class Login extends React.Component {
                 />
                 <button className="login-button">Log In</button>
                 <p className="login-subtext">Not a member? 
-                Sign up <span onClick={() => this.handleSignUpToggle()}className="login-link">here</span></p>
+                Sign up <span onClick={() => this.handleSignUpTrue()}className="login-link">here</span></p>
             </form>
         }
 
@@ -121,7 +125,8 @@ export class Login extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    loggingIn: state.loggingIn
+    loggingIn: state.loggingIn, 
+    signUp: state.signUp
 }); 
 
 export default connect(mapStateToProps)(Login); 

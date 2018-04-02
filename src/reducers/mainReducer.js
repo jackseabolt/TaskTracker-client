@@ -5,7 +5,9 @@ import {
     UPDATE_CURRENT_USER, 
     ADD_TO_BOARDS, 
     LOG_OUT, 
-    SET_CURRENT_BOARD
+    SET_CURRENT_BOARD, 
+    SET_SIGN_UP_FALSE, 
+    SET_SIGN_UP_TRUE
 } from '../actions/mainActions'; 
 
 const initialState = {
@@ -13,7 +15,8 @@ const initialState = {
     authToken: null, // authToken !== null does not mean it is valid
     currentUser: null, // object includes id and username
     boards: [], 
-    currentBoardId: null
+    currentBoardId: null, 
+    signUp: true
 }
 
 export const mainReducer = (state=initialState, action) => {
@@ -33,6 +36,16 @@ export const mainReducer = (state=initialState, action) => {
     else if (action.type === SET_AUTH_TOKEN) {
         return Object.assign({}, state, {
             authToken: action.authToken
+        });
+    }
+    else if (action.type === SET_SIGN_UP_FALSE) {
+        return Object.assign({}, state, {
+            signUp: false
+        });
+    }
+    else if (action.type === SET_SIGN_UP_TRUE) {
+        return Object.assign({}, state, {
+            signUp: true
         });
     }
     else if (action.type === AUTH_SUCCESS) {

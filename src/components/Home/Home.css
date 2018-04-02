@@ -29,7 +29,7 @@
 .home-container {
     text-align: center; 
     position: relative; 
-    top: -140px;
+    top: -160px;
     transition: opacity 1000ms ease-in-out;  
 }
 

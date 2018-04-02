@@ -21,6 +21,16 @@ export const setAuthToken = authToken => ({
     authToken
 });
 
+export const SET_SIGN_UP_FALSE = 'SET_SIGN_UP_FALSE'; 
+export const setSignUpFalse = () => ({
+    type: SET_SIGN_UP_FALSE
+}); 
+
+export const SET_SIGN_UP_TRUE = 'SET_SIGN_UP_TRUE'; 
+export const setSignUpTrue = () => ({
+    type: SET_SIGN_UP_TRUE
+});
+
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const authSuccess = currentUser => ({
     type: AUTH_SUCCESS,

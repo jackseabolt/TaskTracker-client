@@ -44,12 +44,15 @@ class App extends Component {
 
     return (
       <div>
-        <Header />
+        {/* <Header /> */}
         <div className="app-main">
             <Route exact path='/' component={Home} />
             <Route exact path='/demo' component={Demo} />
             <Route exact path='/navigation' component={Navigation} /> 
             <Route exact path='/board' component={Board} />  
+            <Route exact path='/demo' component={Header} />
+            <Route exact path='/navigation' component={Header} />
+            <Route exact path='/board' component={Header} />
         </div>   
       </div>
     );
