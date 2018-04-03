@@ -74,6 +74,26 @@
     
     .home-logo-container {
         width: 100%; 
-        margin: 0px auto; 
+        margin: 100px auto 0px; 
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .home-button {
+        padding: 20px; 
+        width: 100%; 
+    }
+    .home {
+        padding: 100px 0px; 
+        display: flex; 
+    }
+    .home-logo {
+        font-family: 'Lobster', cursive;
+        font-size: 30px; 
+        margin: 0px 0px 10px 0px; 
+        line-height: 100%; 
+    }
+    .home-logo-container {
+        margin-top: 100px; 
     }
 }
