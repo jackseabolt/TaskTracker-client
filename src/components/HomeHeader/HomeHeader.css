@@ -33,3 +33,14 @@
 .home-header-about-button:hover {
     opacity: 1; 
 }
+
+@media screen and (max-width: 300px) {
+    .home-header-about-button { 
+        top: 20px;
+        right: 100px;   
+    }
+    .home-header-login-button { 
+        top: 20px;
+        right: 45px; 
+    }
+}
