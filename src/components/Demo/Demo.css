@@ -1,7 +1,8 @@
 .Demo { 
     display: flex; 
     align-items: top;
-    padding: 100px;
+    padding: 140px 100px;
+    height: 100%; 
 }
 
 
