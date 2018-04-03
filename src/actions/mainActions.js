@@ -99,7 +99,6 @@ export const login = (username, password) => dispatch => {
             storeAuthInfo(authToken, dispatch)
             return authToken
         })
-        .then(token => console.log(`TOKEN ${token}`))
         .catch(err => {
             const {code} = err;
             const message =
@@ -180,7 +179,6 @@ export const getUserBoards = (user_id) => (dispatch, getState) => {
     .then(res => {return res.json()})
     .then(user => {
         dispatch(addToBoards(user.boards)); 
-        console.log(user); 
     })
     .catch(err => {console.error(err)});
 }
