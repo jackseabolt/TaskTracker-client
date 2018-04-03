@@ -60,13 +60,11 @@ export const mainReducer = (state=initialState, action) => {
         });
     } 
     else if (action.type === SET_CURRENT_BOARD) {
-        console.log("REDUCER FIRED", action.board_id)
         return Object.assign({}, state, {
             currentBoardId: action.board_id
         }); 
     }
     else if (action.type === ADD_TO_BOARDS) {
-        console.log(action.boards)
         return Object.assign({}, state, {
             boards: action.boards
         }); 
