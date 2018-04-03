@@ -68,7 +68,7 @@
     }
     
     .home-navigation-half {
-        width: calc(100% - 101px); 
+        width: 100vw; 
         margin-top: 50px; 
         padding: 0px; 
         display: inline-block; 
