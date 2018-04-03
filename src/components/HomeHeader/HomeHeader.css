@@ -36,11 +36,11 @@
 
 @media screen and (max-width: 300px) {
     .home-header-about-button { 
-        top: 20px;
-        right: 100px;   
+        top: 15px;
+        right: 90px;   
     }
     .home-header-login-button { 
-        top: 20px;
-        right: 45px; 
+        top: 15px;
+        right: 30px; 
     }
 }
