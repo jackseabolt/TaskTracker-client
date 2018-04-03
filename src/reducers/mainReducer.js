@@ -2,7 +2,6 @@ import {
     TOGGLE_LOGIN, 
     SET_AUTH_TOKEN, 
     AUTH_SUCCESS, 
-    UPDATE_CURRENT_USER, 
     ADD_TO_BOARDS, 
     LOG_OUT, 
     SET_CURRENT_BOARD, 

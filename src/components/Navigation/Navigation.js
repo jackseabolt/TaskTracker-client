@@ -4,8 +4,6 @@ import BoardSelector from '../BoardSelector/BoardSelector';
 import './Navigation.css'; 
 import { connect } from 'react-redux'; 
 import { Redirect } from 'react-router-dom'; 
-import { getUserBoards } from '../../actions/mainActions';
-import { Link } from 'react-router-dom';   
 
 export class Navigation extends React.Component {
     componentDidMount() {

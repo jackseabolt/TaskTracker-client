@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Demo from '../Demo/Demo'; 
 import Header from '../Header/Header';
-import Home from '../Home/Home'; 
-import Login from '../Login/Login';  
+import Home from '../Home/Home';  
 import Board from '../Board/Board'; 
 import Navigation from '../Navigation/Navigation'; 
 import HomeHeader from '../HomeHeader/HomeHeader'; 

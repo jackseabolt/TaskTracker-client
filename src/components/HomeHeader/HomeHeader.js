@@ -1,8 +1,6 @@
 import React from 'react'; 
-import Login from '../Login/Login'; 
 import { connect } from 'react-redux'; 
 import { toggleLogin, setSignUpFalse, aboutOnToggle } from '../../actions/mainActions'; 
-import { Link } from 'react-router-dom'; 
 import { Transition } from 'react-transition-group'; 
 import './HomeHeader.css'; 
 
