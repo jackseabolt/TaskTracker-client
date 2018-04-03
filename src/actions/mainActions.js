@@ -31,6 +31,11 @@ export const setSignUpTrue = () => ({
     type: SET_SIGN_UP_TRUE
 });
 
+export const ABOUT_ON_TOGGLE = 'ABOUT_ON_TOGGLE'; 
+export const aboutOnToggle = () => ({
+    type: ABOUT_ON_TOGGLE
+});
+
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const authSuccess = currentUser => ({
     type: AUTH_SUCCESS,

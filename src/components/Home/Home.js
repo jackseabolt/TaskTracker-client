@@ -4,6 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { Transition } from 'react-transition-group';
 import HomeNavigation from '../HomeNavigation/HomeNavigation';
 import Login from '../Login/Login'; 
+import About from '../About/About'; 
 import './Home.css';
 
 export class Home extends React.Component {
@@ -21,6 +22,11 @@ export class Home extends React.Component {
           loginForm = <Login />
         }
 
+        let about; 
+        if(this.props.aboutOn) {
+            about = <About />
+        }
+
         if (this.props.loggedIn) {
             return <Redirect to='/navigation' />
         }
@@ -32,7 +38,7 @@ export class Home extends React.Component {
 
         let content; 
         if(this.state.started){
-            content = <div><HomeNavigation />{ loginForm }</div>
+            content = <div><HomeNavigation /></div>
         } else {
             content = <Transition in={true} timeout={300} appear={true}>
             {(state) => (
@@ -53,6 +59,8 @@ export class Home extends React.Component {
         return (
             <div className="home">
                 { content }
+                { about }
+                { loginForm }
             </div>
         )
     }
@@ -60,7 +68,8 @@ export class Home extends React.Component {
 
 const mapStateToProps = state => ({
     loggedIn: state.currentUser !== null, 
-    loggingIn: state.loggingIn
+    loggingIn: state.loggingIn, 
+    aboutOn: state.aboutOn
 });
 
 export default connect(mapStateToProps)(Home); 

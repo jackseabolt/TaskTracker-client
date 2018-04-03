@@ -20,7 +20,7 @@ export class HomeNavigation extends React.Component {
         }
 
         return (
-            <Transition in={true} timeout={300} appear={true}>
+            <Transition in={true} timeout={200} appear={true}>
             {(state) => (
                     <div className="home-navigation-container" style={{
                         ...transitionStyles[state]
@@ -30,11 +30,11 @@ export class HomeNavigation extends React.Component {
                                 <h2 className="home-navigation-logo">Get Started</h2>
                             </div>
                             <div className="home-navigation-half left">
-                                <p>Just visiting? Try a demo account!</p>
+                                <p className="home-navigation-p">Just visiting? Try a demo account!</p>
                                 <Link to='/demo'><button className="home-navigation-button">Demo</button></Link>
                             </div>
                             <div className="home-navigation-half">
-                                <p>Create a free account and get started today</p>
+                                <p className="home-navigation-p">Create a free account and get started today</p>
                                 <button className="home-navigation-button" onClick={() => this.handleLogin()}>Register</button>
                             </div>
                         </div>

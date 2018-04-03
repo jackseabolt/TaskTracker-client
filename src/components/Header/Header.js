@@ -2,12 +2,13 @@ import React from 'react';
 import Login from '../Login/Login'; 
 import './Header.css'; 
 import { connect } from 'react-redux'; 
-import { toggleLogin, logOut } from '../../actions/mainActions'; 
+import { toggleLogin, logOut, setSignUpFalse } from '../../actions/mainActions'; 
 import { Link } from 'react-router-dom'; 
 
 export class Header extends React.Component {
 
     handleLogin() {
+        this.props.dispatch(setSignUpFalse()); 
         this.props.dispatch(toggleLogin());
     }
 
@@ -31,7 +32,7 @@ export class Header extends React.Component {
         }
 
         return (
-            <header>
+            <header className="header">
                 <Link to='/'><h3 className="header-logo">TaskTracker</h3></Link>
                 { authButton }
                 { login }

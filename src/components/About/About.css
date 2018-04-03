@@ -1,0 +1,44 @@
+.about-main {
+    width: 70%; 
+    max-width: 300px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    background-color: rgb(211, 211, 211); 
+    padding: 50px; 
+    z-index: 21;
+    color: rgb(68, 68, 68);
+    transition: 1s;
+    box-shadow: 0px 0px 40px rgb(29, 29, 29); 
+    border-radius: 3px;
+    transition: 0.3s;   
+}
+
+.about-p {
+    line-height: 22px;
+    text-align: center;  
+}
+
+.about-title {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 25px; 
+    font-family: 'Roboto Condensed', sans-serif;    
+}
+
+.about-close {
+    float: right; 
+    opacity: 0.6; 
+    font-size: 20px; 
+    position: relative; 
+    top: -18px; 
+    right: -10px; 
+    transition: 0.3s; 
+    cursor: pointer;
+}
+
+.about-close:hover {
+    opacity: 0.8; 
+}
+
+

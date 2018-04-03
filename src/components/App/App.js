@@ -5,6 +5,7 @@ import Home from '../Home/Home';
 import Login from '../Login/Login';  
 import Board from '../Board/Board'; 
 import Navigation from '../Navigation/Navigation'; 
+import HomeHeader from '../HomeHeader/HomeHeader'; 
 import './App.css'; 
 import { refreshAuthToken } from '../../actions/mainActions';
 import {connect} from 'react-redux';
@@ -46,6 +47,7 @@ class App extends Component {
       <div>
         {/* <Header /> */}
         <div className="app-main">
+            <Route exact path='/' component={HomeHeader} />
             <Route exact path='/' component={Home} />
             <Route exact path='/demo' component={Demo} />
             <Route exact path='/navigation' component={Navigation} /> 
