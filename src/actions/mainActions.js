@@ -1,6 +1,7 @@
 import {normalizeResponseErrors} from './utils';
 import jwtDecode from 'jwt-decode'; 
-import { saveAuthToken, clearAuthToken } from '../local-storage'; 
+import { saveAuthToken, clearAuthToken } from '../local-storage';
+import { REACT_APP_API_URL } from '../config'; 
 
 
 export const LOG_OUT = 'LOG_OUT'; 
@@ -53,7 +54,7 @@ export const addToBoards = boards => ({
 }); 
 
 export const signUp = (username, password) => dispatch => {
-    return fetch('http://localhost:8080/users/', {
+    return fetch(`${REACT_APP_API_URL }/users/`, {
         method: 'POST', 
         body: JSON.stringify({
             username, password
@@ -80,7 +81,7 @@ const storeAuthInfo = (authToken, dispatch) => {
 export const login = (username, password) => dispatch => {
     // dispatch(authRequest());
     return (
-        fetch(`http://localhost:8080/auth/login`, {
+        fetch(`${REACT_APP_API_URL }/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -114,7 +115,7 @@ export const login = (username, password) => dispatch => {
 export const refreshAuthToken = () => (dispatch, getState) => {
     // dispatch(authRequest());
     const authToken = getState().authToken;
-    return fetch(`http://localhost:8080/auth/refresh`, {
+    return fetch(`${REACT_APP_API_URL }/auth/refresh`, {
         method: 'POST',
         headers: {
             // Provide our existing token as credentials to get a new one
@@ -136,7 +137,7 @@ export const refreshAuthToken = () => (dispatch, getState) => {
 
 export const createBoard = (name, user_id) => (dispatch, getState) => {
     const authToken = getState().authToken; 
-    return fetch('http://localhost:8080/board/', {
+    return fetch(`${REACT_APP_API_URL }/board/`, {
         method: 'POST', 
         headers: {
             Authorization: `Bearer ${authToken}`, 
@@ -169,7 +170,7 @@ export const deleteBoard = (user_id, board_id) => (dispatch, getState) => {
 
 export const getUserBoards = (user_id) => (dispatch, getState) => {
     const authToken = getState().authToken; 
-    return fetch(`http://localhost:8080/users/${user_id}`, {
+    return fetch(`${REACT_APP_API_URL }/users/${user_id}`, {
         method: 'GET', 
         headers: {
             Authorization: `Bearer ${authToken}`
@@ -187,7 +188,7 @@ export const getUserBoards = (user_id) => (dispatch, getState) => {
 
 export const addToDo = (value, board_id, user_id) => (dispatch, getState) => {
     const authToken = getState().authToken; 
-    return fetch(`http://localhost:8080/board/${board_id}`, {
+    return fetch(`${REACT_APP_API_URL }/board/${board_id}`, {
         method: 'POST', 
         headers: {
             Authorization: `Bearer ${authToken}`, 
@@ -205,7 +206,7 @@ export const addToDo = (value, board_id, user_id) => (dispatch, getState) => {
 
 export const deleteToDo = (value, board_id, user_id) => (dispatch, getState) => {
     const authToken = getState().authToken; 
-    return fetch(`http://localhost:8080/board/${board_id}/todo`, {
+    return fetch(`${REACT_APP_API_URL }/board/${board_id}/todo`, {
         method: 'DELETE', 
         headers: {
             Authorization: `Bearer ${authToken}`, 
@@ -221,7 +222,7 @@ export const deleteToDo = (value, board_id, user_id) => (dispatch, getState) => 
 
 export const completeToDo = (value, board_id, user_id) => (dispatch, getState) => {
     const authToken = getState().authToken; 
-    return fetch(`http://localhost:8080/board/${board_id}/todo`, {
+    return fetch(`${REACT_APP_API_URL }/board/${board_id}/todo`, {
         method: 'POST', 
         headers: {
             Authorization: `Bearer ${authToken}`, 
@@ -237,7 +238,7 @@ export const completeToDo = (value, board_id, user_id) => (dispatch, getState) =
 
 export const deleteCompleted = (value, board_id, user_id) => (dispatch, getState) => {
     const authToken = getState().authToken; 
-    return fetch(`http://localhost:8080/board/${board_id}/completed`, {
+    return fetch(`${REACT_APP_API_URL }/board/${board_id}/completed`, {
         method: 'DELETE', 
         headers: {
             Authorization: `Bearer ${authToken}`, 
