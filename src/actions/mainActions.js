@@ -1,5 +1,3 @@
-'use strict'; 
-
 import {normalizeResponseErrors} from './utils';
 import jwtDecode from 'jwt-decode'; 
 import { saveAuthToken, clearAuthToken } from '../local-storage'; 

@@ -2,7 +2,6 @@ import React from 'react';
 import ToDos from '../ToDos/ToDos'; 
 import Form from '../Form/Form';
 import Completed from '../Completed/Completed'; 
-import Header from '../Header/Header'; 
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux'; 
 import './Demo.css'; 
