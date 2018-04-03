@@ -1,0 +1,35 @@
+.home-header {
+    width: calc(100% - 120px); 
+    position: fixed; 
+    background-color: none; 
+    top: 0px; 
+    z-index: 30;
+    padding: 30px 60px;  
+    color: white; 
+    transition: opacity 1000ms ease-in-out; 
+}
+
+.home-header-login-button { 
+    position: absolute; 
+    top: 20px;
+    right: 60px;
+    cursor: pointer; 
+    opacity: 0.7; 
+    transition: 0.3s;    
+}
+.home-header-login-button:hover {
+    opacity: 1; 
+}
+
+.home-header-about-button { 
+    position: absolute; 
+    top: 20px;
+    right: 150px;
+    cursor: pointer; 
+    opacity: 0.7; 
+    transition: 0.3s;    
+}
+
+.home-header-about-button:hover {
+    opacity: 1; 
+}

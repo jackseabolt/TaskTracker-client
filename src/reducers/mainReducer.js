@@ -7,7 +7,8 @@ import {
     LOG_OUT, 
     SET_CURRENT_BOARD, 
     SET_SIGN_UP_FALSE, 
-    SET_SIGN_UP_TRUE
+    SET_SIGN_UP_TRUE, 
+    ABOUT_ON_TOGGLE
 } from '../actions/mainActions'; 
 
 const initialState = {
@@ -16,7 +17,8 @@ const initialState = {
     currentUser: null, // object includes id and username
     boards: [], 
     currentBoardId: null, 
-    signUp: true
+    signUp: true, 
+    aboutOn: false
 }
 
 export const mainReducer = (state=initialState, action) => {
@@ -46,6 +48,11 @@ export const mainReducer = (state=initialState, action) => {
     else if (action.type === SET_SIGN_UP_TRUE) {
         return Object.assign({}, state, {
             signUp: true
+        });
+    }
+    else if (action.type === ABOUT_ON_TOGGLE) {
+        return Object.assign({}, state, {
+            aboutOn: !state.aboutOn
         });
     }
     else if (action.type === AUTH_SUCCESS) {
