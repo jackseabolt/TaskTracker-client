@@ -1,11 +1,12 @@
 .header {
     width: calc(100% - 120px); 
     position: fixed; 
-    background-color: rgba(0, 0, 0, 0.6); 
+    background-color: rgb(21, 16, 36); 
     top: 0px; 
     z-index: 30;
     padding: 30px 60px;  
     color: white; 
+    opacity: 1; 
 }
 
 .header-logo {
