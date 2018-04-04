@@ -57,7 +57,7 @@ export class About extends React.Component {
                                 <i className="fas fa-times about-close-icon"></i>
                             </div>
                            
-                                <h2 className="about-title"><i class="fas fa-info-circle"></i>&nbsp;&nbsp;About</h2>
+                                <h2 className="about-title"><i className="fas fa-info-circle"></i>&nbsp;&nbsp;About</h2>
                                 <p className="about-p">TaskTracker is an application for organizing your daily activities. 
                                 Users can create different boards for different task groups. Within a board, a user may add as many 
                                 task items as they wish. Check off items as you complete them. It's easy!

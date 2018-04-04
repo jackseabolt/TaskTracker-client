@@ -20,3 +20,13 @@
     top: 7px;
     right: 60px;   
 }
+
+@media screen and (max-width: 350px) {
+    .header-button { 
+        display:  none;    
+    }
+    .header {
+        width: calc(100% - 60px); 
+        padding: 30px 30px;  
+    }
+}
