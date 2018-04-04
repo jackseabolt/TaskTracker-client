@@ -1,5 +1,9 @@
+<img src="https://travis-ci.org/jackseabolt/TaskTracker-client.svg?branch=master" alt="build:started">
+
 <h1>TaskTracker</h1>
 <p><em>This document provides general information on the TaskTracker application</em></p>
+
+<img src="/src/images/screenshot.png" width="auto">
 
 Why TaskTracker
 -------------
