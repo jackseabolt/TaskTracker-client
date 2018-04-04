@@ -15,7 +15,6 @@ export class BoardSelector extends React.Component {
 
     handleView() {
         const board_id = this.props.board.id;
-        console.log("FUNCTION FIRED", board_id)
         this.props.dispatch(setCurrentBoard(board_id)); 
     }
 

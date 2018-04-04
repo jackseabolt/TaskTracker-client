@@ -6,12 +6,6 @@ import { Transition } from 'react-transition-group';
 import { PulseLoader } from 'react-spinners'; 
 
 export class Login extends React.Component {
-    constructor(props) {
-        super(props) 
-        this.state={
-            signUp: true
-        }
-    }
 
     handleClose() {
         this.props.dispatch(toggleLogin()); 
