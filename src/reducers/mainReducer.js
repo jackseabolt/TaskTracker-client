@@ -27,7 +27,8 @@ const initialState = {
 export const mainReducer = (state=initialState, action) => {
     if(action.type === TOGGLE_LOGIN) {
         return Object.assign({}, state, {
-            loggingIn: !state.loggingIn
+            loggingIn: !state.loggingIn, 
+            error: null
         }); 
     }
     else if(action.type === LOG_OUT) {

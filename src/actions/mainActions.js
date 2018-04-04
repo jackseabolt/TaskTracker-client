@@ -77,7 +77,12 @@ export const signUp = (username, password) => dispatch => {
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
     .catch(err => {
-        console.error(err)
+        const {code} = err;
+        const message =
+            code === 401
+                ? 'Incorrect username or password'
+                : 'Unable to login, please try again';
+        dispatch(authError(message));
     }); 
 }
 
