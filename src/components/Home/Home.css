@@ -78,7 +78,7 @@
     }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 330px) {
     .home-button {
         padding: 20px; 
         width: 100%; 
