@@ -1,13 +1,15 @@
 import { 
     TOGGLE_LOGIN, 
-    SET_AUTH_TOKEN, 
-    AUTH_SUCCESS, 
+    SET_AUTH_TOKEN,  
     ADD_TO_BOARDS, 
     LOG_OUT, 
     SET_CURRENT_BOARD, 
     SET_SIGN_UP_FALSE, 
     SET_SIGN_UP_TRUE, 
-    ABOUT_ON_TOGGLE
+    ABOUT_ON_TOGGLE, 
+    AUTH_REQUEST, 
+    AUTH_SUCCESS, 
+    AUTH_ERROR
 } from '../actions/mainActions'; 
 
 const initialState = {
@@ -17,7 +19,9 @@ const initialState = {
     boards: [], 
     currentBoardId: null, 
     signUp: true, 
-    aboutOn: false
+    aboutOn: false, 
+    loading: false,
+    error: null
 }
 
 export const mainReducer = (state=initialState, action) => {
@@ -39,6 +43,17 @@ export const mainReducer = (state=initialState, action) => {
             authToken: action.authToken
         });
     }
+    else if (action.type === AUTH_REQUEST) {
+        return Object.assign({}, state, {
+            loading: true,
+            error: null
+        });
+    } else if (action.type === AUTH_ERROR) {
+        return Object.assign({}, state, {
+            loading: false,
+            error: action.error
+        });
+    }
     else if (action.type === SET_SIGN_UP_FALSE) {
         return Object.assign({}, state, {
             signUp: false
@@ -56,7 +71,9 @@ export const mainReducer = (state=initialState, action) => {
     }
     else if (action.type === AUTH_SUCCESS) {
         return Object.assign({}, state, {
-            currentUser: action.currentUser
+            currentUser: action.currentUser, 
+            loading: false, 
+            error: null
         });
     } 
     else if (action.type === SET_CURRENT_BOARD) {
