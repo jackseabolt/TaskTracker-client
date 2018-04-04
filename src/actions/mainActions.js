@@ -20,6 +20,23 @@ export const setAuthToken = authToken => ({
     authToken
 });
 
+export const AUTH_REQUEST = 'AUTH_REQUEST';
+export const authRequest = () => ({
+    type: AUTH_REQUEST
+});
+
+export const AUTH_SUCCESS = 'AUTH_SUCCESS';
+export const authSuccess = currentUser => ({
+    type: AUTH_SUCCESS,
+    currentUser
+});
+
+export const AUTH_ERROR = 'AUTH_ERROR';
+export const authError = error => ({
+    type: AUTH_ERROR,
+    error
+});
+
 export const SET_SIGN_UP_FALSE = 'SET_SIGN_UP_FALSE'; 
 export const setSignUpFalse = () => ({
     type: SET_SIGN_UP_FALSE
@@ -33,12 +50,6 @@ export const setSignUpTrue = () => ({
 export const ABOUT_ON_TOGGLE = 'ABOUT_ON_TOGGLE'; 
 export const aboutOnToggle = () => ({
     type: ABOUT_ON_TOGGLE
-});
-
-export const AUTH_SUCCESS = 'AUTH_SUCCESS';
-export const authSuccess = currentUser => ({
-    type: AUTH_SUCCESS,
-    currentUser
 });
 
 export const SET_CURRENT_BOARD = 'SET_CURRENT_BOARD'; 
@@ -74,12 +85,13 @@ const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
     dispatch(setAuthToken(authToken)); 
     dispatch(authSuccess(decodedToken.user)); 
-    dispatch(getUserBoards(decodedToken.user.id)) 
+    dispatch(getUserBoards(decodedToken.user.id)); 
+    dispatch(toggleLogin());  
     saveAuthToken(authToken); 
 }
 
 export const login = (username, password) => dispatch => {
-    // dispatch(authRequest());
+    dispatch(authRequest());
     return (
         fetch(`${REACT_APP_API_URL}/auth/login`, {
             method: 'POST',
@@ -105,8 +117,7 @@ export const login = (username, password) => dispatch => {
                 code === 401
                     ? 'Incorrect username or password'
                     : 'Unable to login, please try again';
-            console.error(message)
-            // dispatch(authError(err));
+            dispatch(authError(message));
         })
     );
 };

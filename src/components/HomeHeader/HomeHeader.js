@@ -23,15 +23,15 @@ export class Header extends React.Component {
         }
 
         return (
-            <Transition in={true} timeout={1000} appear={true}>
-            {(state) => (
-                <header className="home-header" style={{
-                    ...transitionStyles[state]
-                }} >
-                <p className="home-header-login-button" onClick={() => this.handleLogin()}>Login</p> 
-                <p className="home-header-about-button" onClick={() => this.handleAboutToggle()}><i className="far fa-info-circle"></i>&nbsp;&nbsp;About</p> 
-            </header>
-            )}
+            <Transition in={true} timeout={300} appear={true}>
+                {(state) => (
+                    <header className="home-header" style={{
+                        ...transitionStyles[state]
+                    }} >
+                    <p className="home-header-login-button" onClick={() => this.handleLogin()}>Login</p> 
+                    <p className="home-header-about-button" onClick={() => this.handleAboutToggle()}><i className="far fa-info-circle"></i>&nbsp;&nbsp;About</p> 
+                </header>
+                )}
             </Transition>
         )
     }

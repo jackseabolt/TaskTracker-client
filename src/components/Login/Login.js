@@ -3,6 +3,7 @@ import './Login.css'
 import { connect } from 'react-redux'; 
 import { toggleLogin, signUp, login, setSignUpFalse, setSignUpTrue } from '../../actions/mainActions'; 
 import { Transition } from 'react-transition-group';
+import { PulseLoader } from 'react-spinners'; 
 
 export class Login extends React.Component {
     constructor(props) {
@@ -27,14 +28,12 @@ export class Login extends React.Component {
     handleSignUp(e) {
         e.preventDefault(); 
         return this.props.dispatch(signUp(this.signupUsername.value, this.signupPassword.value))
-            .then(() => this.props.dispatch(login(this.signupUsername.value, this.signupPassword.value)))
-            .then(() => this.props.dispatch(toggleLogin()));  
+            .then(() => this.props.dispatch(login(this.signupUsername.value, this.signupPassword.value)));  
     }
 
     handleLogin(e) {
         e.preventDefault(); 
-        return this.props.dispatch(login(this.loginUsername.value, this.loginPassword.value)) 
-        .then(() => this.props.dispatch(toggleLogin())); 
+        return this.props.dispatch(login(this.loginUsername.value, this.loginPassword.value));  
     }
     
     render() {
@@ -70,6 +69,7 @@ export class Login extends React.Component {
         if(this.props.signUp) {
             content = <form onSubmit={e => this.handleSignUp(e)}>
                 <h2 className="login-title">Sign Up</h2>
+                <p className="login-error">{this.props.error}</p>
                 <input 
                     className="login-input" 
                     placeholder="username" 
@@ -81,12 +81,16 @@ export class Login extends React.Component {
                     ref={input => this.signupPassword = input} 
                 />
                 <button className="login-button">Register</button>
+                <div className="loader-container">
+                    <PulseLoader color={'#fff'} loading={this.props.loading} className="login-graphic" />
+                </div>
                 <p className="login-subtext">Already a member? 
-                Log in <span onClick={() => this.handleSignUpFalse()}className="login-link">here</span></p>
+                Log in <span onClick={() => this.handleSignUpFalse()} className="login-link">here</span></p>
             </form>
         } else {
             content = <form onSubmit={e => this.handleLogin(e)}>
                 <h2 className="login-title">Log in</h2>
+                <p className="login-error">{this.props.error}</p>
                 <input 
                     className="login-input" 
                     placeholder="username" 
@@ -98,6 +102,9 @@ export class Login extends React.Component {
                     ref={input => this.loginPassword = input}
                 />
                 <button className="login-button">Log In</button>
+                <div className="loader-container">
+                    <PulseLoader color={'#fff'} loading={this.props.loading} className="login-graphic" />
+                </div>
                 <p className="login-subtext">Not a member? 
                 Sign up <span onClick={() => this.handleSignUpTrue()}className="login-link">here</span></p>
             </form>
@@ -126,7 +133,9 @@ export class Login extends React.Component {
 
 const mapStateToProps = state => ({
     loggingIn: state.loggingIn, 
-    signUp: state.signUp
+    signUp: state.signUp, 
+    loading: state.loading, 
+    error: state.error
 }); 
 
 export default connect(mapStateToProps)(Login); 
