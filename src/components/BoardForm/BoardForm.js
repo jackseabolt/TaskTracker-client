@@ -47,7 +47,7 @@ export class BoardForm extends React.Component {
                             ref={input => this.input = input} 
                         />
                         { validation }
-                        <button className="g-button">Add</button>
+                        <button id="submit" className="g-button">Add</button>
                     </form>
                 </div>
             </ section> 

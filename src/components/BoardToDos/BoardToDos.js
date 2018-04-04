@@ -2,9 +2,8 @@ import React from 'react';
 import BoardToDoItem from '../BoardToDoItem/BoardToDoItem';
 import { connect } from 'react-redux'; 
 
-export class ToDos extends React.Component {
+export class BoardToDos extends React.Component {
     render() {
-
         const myBoard = this.props.boards.find(board => board.id === this.props.currentBoardId);  
         const toDoItems = myBoard.todos.map((item, key) => (
             <BoardToDoItem 
@@ -29,4 +28,4 @@ const mapStateToProps = state => ({
     boards: state.boards
 }); 
 
-export default connect(mapStateToProps)(ToDos); 
+export default connect(mapStateToProps)(BoardToDos); 

@@ -9,7 +9,6 @@ export class BoardToDoItem extends React.Component {
         const value = this.props.item.value; 
         const board_id = this.props.currentBoardId; 
         const user_id = this.props.currentUser.id
-        console.log(value, board_id, user_id)
         this.props.dispatch(deleteToDo(value, board_id, user_id)); 
     }
 
@@ -17,7 +16,6 @@ export class BoardToDoItem extends React.Component {
         const value = this.props.item.value; 
         const board_id = this.props.currentBoardId; 
         const user_id = this.props.currentUser.id
-        console.log(value, board_id, user_id)
         this.props.dispatch(completeToDo(value, board_id, user_id));  
     }
 

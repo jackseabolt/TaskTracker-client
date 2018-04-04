@@ -1,6 +1,7 @@
 import React from 'react';
-import App from '../components/App/App';
-import { shallow } from 'enzyme'; 
+import { App } from '../components/App/App';
+import { shallow, mount } from 'enzyme'; 
+import { BrowserRouter as Router } from 'react-router-dom'; 
 import ToDos from '../components/ToDos/ToDos'; 
 import Completed from '../components/Completed/Completed'; 
 import Header from '../components/Header/Header'; 
@@ -8,12 +9,12 @@ import Form from '../components/Form/Form';
 
 describe('App', () => {
   it('renders without crashing', () => {
-    shallow(<App />); 
+    shallow(<Router><App /></Router>); 
   });
-//   it('contains <ToDos />', () => {
-//     const wrapper = shallow(<App />); 
-//     expect(wrapper.find(ToDos).exists()).toEqual(true); 
-//   }); 
+  // it('contains <ToDos />', () => {
+  //   const wrapper = mount(<App />); 
+  //   expect(wrapper.find(ToDos).exists()).toEqual(true); 
+  // }); 
 //   it('contains <Completed />', () => {
 //     const wrapper = shallow(<App />);
 //     expect(wrapper.find(Completed).exists()).toEqual(true); 

@@ -11,7 +11,7 @@ import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
   
 
-class App extends Component {
+export class App extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn && !this.props.loggedIn) {
         // When we are logged in, refresh the auth token periodically
@@ -44,7 +44,6 @@ class App extends Component {
 
     return (
       <div>
-        {/* <Header /> */}
         <div className="app-main">
             <Route exact path='/' component={HomeHeader} />
             <Route exact path='/' component={Home} />
