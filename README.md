@@ -7,16 +7,12 @@
 
 Why TaskTracker
 -------------
-Everyone needs a way to stay organized. Try TaskTracker! Create a list of items you want to complete. Check them off as each task is completed. 
-
-How It Works
--------------
-The TaskTracker client-side application was built using React and Redux. The backend was built with Node, Express, Sequelize and PostreSQL. 
+Everyone needs a way to stay organized. Try TaskTracker! Create a lists of items you want to complete. Check them off as each task is completed.  
 
 <table layout="fixed">
   <tr>
     <td width="55%">
-      <p>Manage your daily tasks on a custom task organization board.</p>
+      <p>Manage your daily tasks on a custom task board.</p>
     </td>
     <td width = "40%">
       <img src="/src/images/board.png" max-height="240px" width="auto">
@@ -30,24 +26,11 @@ The TaskTracker client-side application was built using React and Redux. The bac
       <img src="/src/images/navigation.png" max-height="240px" witdh="auto">
     </td>
   </tr>
-  <!-- 
-  <tr>
-    <td>
-      <p>The large numbers and color coding make the patron tile easy to understand.  Additionl information available includes seat location, time of stay, and a graphic representation of drink purchases.</p>
-    </td>
-    <td>
-      <img src="/img/buzz-kill-patrondet.png" max-height="240px" witdh="auto">
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <p>And if someone goes too far, help is a click away.</p>
-    </td>
-    <td>
-      <img src="/img/buzz-kill-patronemergency.png" max-height="240px" witdh="auto">
-    </td>
-  </tr> -->
 </table>
+
+Technology
+-------------
+The TaskTracker client-side application was built using React and Redux. The backend was built with Node, Express, Sequelize and PostreSQL.
 
 For local use
 --------
