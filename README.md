@@ -27,7 +27,7 @@ The TaskTracker client-side application was built using React and Redux. The bac
       <p>Organize your boards using the navigation board. Need to step away? All of your data is saved in a secure SQL database.</p>
     </td>
     <td>
-      <img src="/src/images/board.png" max-height="240px" witdh="auto">
+      <img src="/src/images/navigation.png" max-height="240px" witdh="auto">
     </td>
   </tr>
   <!-- 
