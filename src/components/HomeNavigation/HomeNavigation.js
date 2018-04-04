@@ -31,11 +31,11 @@ export class HomeNavigation extends React.Component {
                             </div>
                             <div className="home-navigation-half left">
                                 <p className="home-navigation-p">Just visiting? Try a demo account!</p>
-                                <Link to='/demo'><button className="home-navigation-button">Demo</button></Link>
+                                <Link to='/demo'><button id="home-navigation-demo-button" className="home-navigation-button">Demo</button></Link>
                             </div>
                             <div className="home-navigation-half">
                                 <p className="home-navigation-p">Create a free account and get started today</p>
-                                <button className="home-navigation-button" onClick={() => this.handleLogin()}>Register</button>
+                                <button id="home-navigation-login-button" className="home-navigation-button" onClick={() => this.handleLogin()}>Register</button>
                             </div>
                         </div>
                     </div>

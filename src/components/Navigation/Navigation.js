@@ -6,9 +6,6 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'; 
 
 export class Navigation extends React.Component {
-    componentDidMount() {
-        
-    }
     
     render() {
         const boards = this.props.boards.map((board, key) => (

@@ -10,12 +10,4 @@ describe('BoardForm', () => {
         const wrapper = shallow(<BoardForm />); 
         expect(wrapper.state('message')).toEqual(null); 
     }); 
-    // it('dispatches action if inputs are filled in', () => {
-    //     const spy = jest.fn(); 
-    //     const wrapper = mount(<BoardForm dispatch={spy} />); 
-    //     wrapper.instance(); 
-    //     wrapper.find('.board-form-input').simulate('change', { target: { value: 'Hello' } })
-    //     wrapper.find('#submit').simulate('click'); 
-    //     expect(spy).toHaveBeenCalled();
-    // });
 }); 

@@ -4,7 +4,7 @@ import { toggleLogin, setSignUpFalse, aboutOnToggle } from '../../actions/mainAc
 import { Transition } from 'react-transition-group'; 
 import './HomeHeader.css'; 
 
-export class Header extends React.Component {
+export class HomeHeader extends React.Component {
 
     handleLogin() {
         this.props.dispatch(setSignUpFalse()); 
@@ -41,4 +41,4 @@ const mapStateToProps = state => ({
     loggingIn: state.loggingIn
 }); 
 
-export default connect(mapStateToProps)(Header); 
+export default connect(mapStateToProps)(HomeHeader); 
