@@ -1,7 +1,7 @@
 import React from 'react'; 
 import { shallow, mount } from 'enzyme'; 
-import  BoardCompleted  from '../components/BoardCompleted/BoardCompleted'; 
-import BoardCompletedItem from '../components/BoardCompletedItem/BoardCompletedItem';
+import  BoardCompleted  from '../../components/BoardCompleted/BoardCompleted'; 
+import BoardCompletedItem from '../../components/BoardCompletedItem/BoardCompletedItem';
 import { Provider } from 'react-redux'; 
 import configureStore from 'redux-mock-store'
 

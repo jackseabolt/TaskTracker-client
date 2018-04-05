@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { BoardToDoItem } from '../components/BoardToDoItem/BoardToDoItem'; 
+import { BoardToDoItem } from '../../components/BoardToDoItem/BoardToDoItem'; 
 import { shallow, mount } from 'enzyme'; 
 
 describe('BoardToDoItem', () => {

@@ -1,6 +1,6 @@
 import React from 'react'; 
 import { shallow, mount } from 'enzyme'; 
-import { Login } from '../components/Login/Login'; 
+import { Login } from '../../components/Login/Login'; 
 
 describe('Login', () => {
     it('renders without crashing', () => {

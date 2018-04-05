@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { BoardForm } from '../components/BoardForm/BoardForm'; 
+import { BoardForm } from '../../components/BoardForm/BoardForm'; 
 import { shallow, mount } from 'enzyme'; 
 
 describe('BoardForm', () => {

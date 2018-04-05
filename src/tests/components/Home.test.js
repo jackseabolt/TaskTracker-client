@@ -1,10 +1,10 @@
 import React from 'react'; 
 import { shallow, mount } from 'enzyme'; 
 import { Redirect } from 'react-router-dom';
-import { Home } from '../components/Home/Home'; 
-import Login from '../components/Login/Login'; 
-import About from '../components/About/About'; 
-import Navigation from '../components/Navigation/Navigation'; 
+import { Home } from '../../components/Home/Home'; 
+import Login from '../../components/Login/Login'; 
+import About from '../../components/About/About'; 
+import Navigation from '../../components/Navigation/Navigation'; 
 import { Provider } from 'react-redux'; 
 import configureStore from 'redux-mock-store'; 
 import { BrowserRouter as Router } from 'react-router-dom'; 

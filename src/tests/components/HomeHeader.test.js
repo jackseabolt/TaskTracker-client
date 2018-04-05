@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme'; 
-import { HomeHeader } from '../components/HomeHeader/HomeHeader'; 
+import { HomeHeader } from '../../components/HomeHeader/HomeHeader'; 
 
 describe('HomeHeader', () => {
     it('renders without crashing', () => {

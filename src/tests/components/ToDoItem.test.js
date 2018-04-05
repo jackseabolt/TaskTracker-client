@@ -1,5 +1,5 @@
 import React from 'react'; 
-import ToDoItem from '../components/ToDoItem/ToDoItem'; 
+import ToDoItem from '../../components/ToDoItem/ToDoItem'; 
 import { shallow, mount } from 'enzyme'; 
 
 describe('ToDoItem', () => {

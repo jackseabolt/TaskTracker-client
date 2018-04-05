@@ -1,7 +1,7 @@
 import React from 'react'; 
 import { shallow, mount } from 'enzyme'; 
-import Completed from '../components/Completed/Completed';
-import CompletedItem from '../components/CompletedItem/CompletedItem';  
+import Completed from '../../components/Completed/Completed';
+import CompletedItem from '../../components/CompletedItem/CompletedItem';  
 
 describe('Completed', () => {
     it('renders without crashing', () => {

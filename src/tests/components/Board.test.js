@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { Board } from '../components/Board/Board'; 
+import { Board } from '../../components/Board/Board'; 
 import { shallow, mount } from 'enzyme'; 
 import { Redirect } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';

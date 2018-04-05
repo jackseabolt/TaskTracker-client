@@ -1,9 +1,9 @@
 import React from 'react'; 
-import BoardToDos from '../components/BoardToDos/BoardToDos'; 
+import BoardToDos from '../../components/BoardToDos/BoardToDos'; 
 import { shallow, mount } from 'enzyme'; 
 import { Provider } from 'react-redux'; 
 import configureStore from 'redux-mock-store'; 
-import BoardToDoItem from '../components/BoardToDoItem/BoardToDoItem';
+import BoardToDoItem from '../../components/BoardToDoItem/BoardToDoItem';
 
 const middlewares = [];
 const mockStore = configureStore(middlewares);

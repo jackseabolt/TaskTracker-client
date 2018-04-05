@@ -1,6 +1,6 @@
 import React from 'react'; 
-import { Header } from '../components/Header/Header'; 
-import Login from '../components/Login/Login'; 
+import { Header } from '../../components/Header/Header'; 
+import Login from '../../components/Login/Login'; 
 import { shallow, mount } from 'enzyme'; 
 import { BrowserRouter as Router } from 'react-router-dom'; 
 import { Provider } from 'react-redux'; 
