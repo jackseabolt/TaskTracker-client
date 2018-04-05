@@ -25,10 +25,10 @@ export class Header extends React.Component {
 
         let authButton; 
         if (!this.props.currentUser) {
-            authButton = <button className="g-button header-button" onClick={() => this.handleLogin()}>Login</button> 
+            authButton = <button id="header-login" className="g-button header-button" onClick={() => this.handleLogin()}>Login</button> 
         } 
         else {
-            authButton = <button className="g-button header-button" onClick={() => this.handleLogout()}>Log Out</button> 
+            authButton = <button id="header-logout" className="g-button header-button" onClick={() => this.handleLogout()}>Log Out</button> 
         }
 
         return (
