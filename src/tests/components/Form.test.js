@@ -1,6 +1,6 @@
 import React from 'react'; 
 import { shallow, mount } from 'enzyme'; 
-import Form from '../components/Form/Form'; 
+import Form from '../../components/Form/Form'; 
 
 describe('Form', () => {
     it('renders without crashing', () => {

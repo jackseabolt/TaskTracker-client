@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { NewBoardForm } from '../components/NewBoardForm/NewBoardForm'; 
+import { NewBoardForm } from '../../components/NewBoardForm/NewBoardForm'; 
 import { shallow, mount } from 'enzyme'; 
 
 describe('NewBoardForm', () => {

@@ -12,7 +12,7 @@ import {
     AUTH_ERROR
 } from '../actions/mainActions'; 
 
-const initialState = {
+export const initialState = {
     loggingIn: false,
     authToken: null, // authToken !== null does not mean it is valid
     currentUser: null, // object includes id and username

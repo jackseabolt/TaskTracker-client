@@ -1,8 +1,8 @@
 import React from 'react'; 
 import { shallow, mount } from 'enzyme'; 
-import ToDos from '../components/ToDos/ToDos'; 
-import Header from '../components/Header/Header'; 
-import ToDoItem from '../components/ToDoItem/ToDoItem'; 
+import ToDos from '../../components/ToDos/ToDos'; 
+import Header from '../../components/Header/Header'; 
+import ToDoItem from '../../components/ToDoItem/ToDoItem'; 
 
 describe('ToDos', () => {
     it('renders without crashing', () => {

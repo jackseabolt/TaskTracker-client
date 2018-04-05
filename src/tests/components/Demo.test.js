@@ -1,10 +1,10 @@
 import React from 'react'; 
 import { shallow, mount } from 'enzyme'; 
-import { Demo } from '../components/Demo/Demo'; 
-import ToDos from '../components/ToDos/ToDos'; 
-import Completed from '../components/Completed/Completed'; 
-import Header from '../components/Header/Header'; 
-import Form from '../components/Form/Form'; 
+import { Demo } from '../../components/Demo/Demo'; 
+import ToDos from '../../components/ToDos/ToDos'; 
+import Completed from '../../components/Completed/Completed'; 
+import Header from '../../components/Header/Header'; 
+import Form from '../../components/Form/Form'; 
 
 describe('Demo', () => {
     it('renders without crashing', () => {

@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { BoardCompletedItem } from '../components/BoardCompletedItem/BoardCompletedItem'; 
+import { BoardCompletedItem } from '../../components/BoardCompletedItem/BoardCompletedItem'; 
 import { shallow, mount } from 'enzyme'; 
 
 describe('BoardCompletedItem', () => {

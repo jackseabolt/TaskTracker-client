@@ -1,6 +1,6 @@
 import React from 'react'; 
 import { shallow, mount } from 'enzyme'; 
-import { HomeNavigation } from '../components/HomeNavigation/HomeNavigation';
+import { HomeNavigation } from '../../components/HomeNavigation/HomeNavigation';
 import { BrowserRouter as Router } from 'react-router-dom'; 
 
 describe('HomeNavigation', () => {

@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { About } from '../components/About/About'; 
+import { About } from '../../components/About/About'; 
 import { shallow, mount } from 'enzyme'; 
 
 describe('About', () => {

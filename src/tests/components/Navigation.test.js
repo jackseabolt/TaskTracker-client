@@ -1,7 +1,7 @@
 import React from 'react'; 
 import { shallow, mount } from 'enzyme'; 
-import { Navigation } from '../components/Navigation/Navigation'; 
-import BoardSelector from '../components/BoardSelector/BoardSelector'; 
+import { Navigation } from '../../components/Navigation/Navigation'; 
+import BoardSelector from '../../components/BoardSelector/BoardSelector'; 
 import { Provider } from 'react-redux'; 
 import configureStore from 'redux-mock-store'; 
 import { BrowserRouter as Router } from 'react-router-dom'; 

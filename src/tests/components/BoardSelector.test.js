@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { BoardSelector } from '../components/BoardSelector/BoardSelector'; 
+import { BoardSelector } from '../../components/BoardSelector/BoardSelector'; 
 import { shallow, mount } from 'enzyme'; 
 import { BrowserRouter as Router } from 'react-router-dom'; 
 
