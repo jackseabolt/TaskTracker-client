@@ -60,7 +60,7 @@ export class App extends Component {
 }
 
 const mapStateToProps = state => ({
-    loggedIn: state.currentUser !== null
+    loggedIn: state.authToken !== null,
 });
 
 // Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
