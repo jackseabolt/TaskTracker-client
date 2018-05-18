@@ -86,7 +86,7 @@ export const signUp = (username, password) => dispatch => {
     }); 
 }
 
-const storeAuthInfo = (authToken, dispatch) => {
+export const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
     dispatch(setAuthToken(authToken)); 
     dispatch(authSuccess(decodedToken.user)); 

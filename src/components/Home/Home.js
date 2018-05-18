@@ -67,7 +67,7 @@ export class Home extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    loggedIn: state.currentUser !== null, 
+    loggedIn: state.authToken !== null,
     loggingIn: state.loggingIn, 
     aboutOn: state.aboutOn
 });

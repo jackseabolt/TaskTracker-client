@@ -32,7 +32,7 @@ export class Navigation extends React.Component {
 
 const mapStateToProps = state => ({
     boards: state.boards,
-    loggedIn: state.currentUser !== null, 
+    loggedIn: state.authToken !== null, 
     currentUser: state.currentUser ? state.currentUser.username : null
 }); 
 
