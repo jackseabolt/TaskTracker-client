@@ -13,12 +13,12 @@ before_install:
   - gem update --system
 
 before_deploy:
-  - npm install netlify-cli -g
+  - npm install netlifyctl -g
   - npm run build
 
 deploy:
   provider: script
-  script: netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./build
+  script: netlifyctl deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./build
   skip_cleanup: true
   on:
     branch: master
