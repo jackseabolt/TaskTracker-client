@@ -94,6 +94,7 @@ export class Login extends React.Component {
                     className="login-input" 
                     placeholder="password" 
                     ref={input => this.loginPassword = input}
+                    type="password" name="password"
                 />
                 <button className="login-button">Log In</button>
                 <div className="loader-container">
