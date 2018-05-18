@@ -92,9 +92,9 @@ export class Login extends React.Component {
                 />
                 <input 
                     className="login-input" 
-                    placeholder="password" 
+                    placeholder="password"  
                     ref={input => this.loginPassword = input}
-                    type="password" name="password"
+                    type="password" 
                 />
                 <button className="login-button">Log In</button>
                 <div className="loader-container">
