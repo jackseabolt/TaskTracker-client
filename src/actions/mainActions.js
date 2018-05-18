@@ -5,9 +5,12 @@ import { REACT_APP_API_URL } from '../config';
 
 
 export const LOG_OUT = 'LOG_OUT'; 
-export const logOut = () => ({
-    type: LOG_OUT
-});
+export const logOut = () => {
+    clearAuthToken(); 
+    return {
+        type: LOG_OUT
+    }
+};
 
 export const TOGGLE_LOGIN = 'TOGGLE_LOGIN'; 
 export const toggleLogin = () => ({
