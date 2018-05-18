@@ -170,7 +170,7 @@ export const createBoard = (name, user_id) => (dispatch, getState) => {
 
 export const deleteBoard = (user_id, board_id) => (dispatch, getState) => {
     const authToken = getState().authToken; 
-    return fetch(`http://localhost:8080/board/${board_id}`, {
+    return fetch(`${REACT_APP_API_URL }/board/${board_id}`, {
         method: 'DELETE', 
         headers: {
             Authorization: `Bearer ${authToken}`, 
